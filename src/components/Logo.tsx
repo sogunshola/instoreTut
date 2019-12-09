@@ -13,8 +13,8 @@ class Logo extends Component{
                 <Box mb="sm">
                     <Image source={images.logo} />
                 </Box>
-                <Text size="xl">In
-                    <Text size="xl" color="green">
+                <Text size="xxl">In
+                    <Text size="xxl" color="green">
                         Store
                     </Text>
                 </Text>

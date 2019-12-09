@@ -19,10 +19,11 @@ import {
 
 import { UtilityThemeProvider, Box, Text } from 'react-native-design-utility';
 import Navigation from './src/screens';
+import { theme } from './src/constant/theme';
 
 const App = () => {
   return (
-    <UtilityThemeProvider>
+    <UtilityThemeProvider theme={theme}>
       <Navigation />
     </UtilityThemeProvider>
   );

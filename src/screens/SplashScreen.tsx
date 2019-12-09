@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Text } from 'react-native-design-utility';
+import { Box } from 'react-native-design-utility';
 import Logo from '../components/Logo';
 
 interface Props {
@@ -22,7 +22,7 @@ class SplashScreen extends Component<Props, State> {
     checkAuth = () => {
         setTimeout(() => {
             this.props.navigation.navigate('Auth');
-        }, 3000)
+        }, 2000)
     }
 
     render() {
