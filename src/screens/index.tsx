@@ -1,7 +1,10 @@
+import React, { Component } from 'react'
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import React, { Component } from 'react'
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { NavigationService } from '../api/NavigationService';
+import TabBar from '../components/TabBar';
+import ButtomNav from '../components/ButtomNav';
 
 
 const AuthNavigator = createStackNavigator({
@@ -12,14 +15,27 @@ const AuthNavigator = createStackNavigator({
     headerMode: 'none',
 })
 
-const TabNavigator = createMaterialTopTabNavigator({
+const TabNavigator = createBottomTabNavigator({
     Home: {
         getScreen: () => require('./HomeScreen').default
-    }
+    },
+    List: {
+        getScreen: () => require('./ListScreen').default
+    },
+    Store: {
+        getScreen: () => require('./StoreScreen').default
+    },
+    Order: {
+        getScreen: () => require('./OrderScreen').default
+    },
+}, {
+    tabBarComponent: props => <ButtomNav {...props}/>
 })
 
 const MainNavigator = createStackNavigator({
     Tab: TabNavigator
+}, {
+    headerMode: 'none',
 })
 
 const AppNavigator = createSwitchNavigator({
@@ -29,7 +45,7 @@ const AppNavigator = createSwitchNavigator({
     Auth: AuthNavigator,
     Main: MainNavigator
 }, {
-    initialRouteName: 'Splash'
+    initialRouteName: 'Splash',
 })
 
 const Container =  createAppContainer(AppNavigator);
@@ -40,7 +56,7 @@ class Navigation extends Component {
 
     render() {
         return (
-            <Container />
+            <Container ref={r => NavigationService.setTopLevelNavigator(r)} />
         )
     }
 }

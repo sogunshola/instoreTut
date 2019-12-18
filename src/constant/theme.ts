@@ -50,6 +50,7 @@ const color = {
 const theme = {
   text: {
     size: {
+      xs: 10,
       sm: 14,
       base: 16,
       md: 18,

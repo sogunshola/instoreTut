@@ -9,15 +9,8 @@
  */
 
 import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  StatusBar,
-} from 'react-native';
 
-import { UtilityThemeProvider, Box, Text } from 'react-native-design-utility';
+import { UtilityThemeProvider } from 'react-native-design-utility';
 import Navigation from './src/screens';
 import { theme } from './src/constant/theme';
 

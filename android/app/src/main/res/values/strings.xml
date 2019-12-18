@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">InStore</string>
+    <string name="facebook_app_id">440856970195229</string>
+    <string name="fb_login_protocol_scheme">fb440856970195229</string>
+    <string name="server_client_id">387502113259-nd08n1b3sfg5ofocne9flom2sh2a88sm.apps.googleusercontent.com</string>
 </resources>
